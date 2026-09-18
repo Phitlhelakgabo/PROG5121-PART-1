@@ -62,6 +62,50 @@ public class Login {
     }
     
     /**
+     * Registers a new user by validating their details and storing them
+     * if all checks pass.
+     *
+     * @param username   the desired username
+     * @param password   the desired password
+     * @param cellNumber the SA cell phone number (with +27)
+     * @param firstName  the user's first name
+     * @param lastName   the user's last name
+     * @return a message indicating success or the specific failure reason
+     */
+    public String registerUser(String username, String password,
+                               String cellNumber, String firstName,
+                               String lastName) {
+
+        if (!checkUserName(username)) {
+            return "Username is not correctly formatted; please ensure that your "
+                 + "username contains an underscore and is no more than five "
+                 + "characters in length.";
+        }
+
+        if (!checkPasswordComplexity(password)) {
+            return "Password is not correctly formatted; please ensure that the "
+                 + "password contains at least eight characters, a capital letter, "
+                 + "a number, and a special character.";
+        }
+
+        if (!checkCellPhoneNumber(cellNumber)) {
+            return "Cell phone number incorrectly formatted or does not contain "
+                 + "international code.";
+        }
+
+        // All checks passed — store the details
+        this.storedUsername   = username;
+        this.storedPassword   = password;
+        this.storedCellNumber = cellNumber;
+        this.storedFirstName  = firstName;
+        this.storedLastName   = lastName;
+
+        return "Username successfully captured.\n"
+             + "Password successfully captured.\n"
+             + "Cell phone number successfully added.";
+    }
+    
+    /**
      * Verifies that the entered login details match the stored ones.
      *
      * @param username the username entered at login
