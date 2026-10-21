@@ -1,11 +1,11 @@
-# PROG5121-PART-1
-# PROG5121 Part 1 - QuickChat
+# PROG5121-PART-2
+# PROG5121 Part 2 - QuickChat
 
 ## Student Information
 - *Name:* [Phitlhela Kgabo]
 - *Student Number:* [ST10478848]
 - *Module:* PROG5121 - Programming 1A
-- *PoE:* Part 1
+- *PoE:* Part 2
 
 ## Project Description
 QuickChat is a console-based Java application that allows a user to register
